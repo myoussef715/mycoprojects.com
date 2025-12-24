@@ -55,26 +55,21 @@ a{
   opacity:.95;
 }
 
-.menu{
-  text-align: center;
-}
-
+/* Desktop menu */
 .menu a{
-  margin: 0 12px;
-  display: inline-block;
-}
+  margin-left:18px;
+  font-size:14px;
+  color:var(--muted);
 }
 
 /* Hero */
 .hero{
-  padding: 72px 0 40px;
+  padding:72px 0 40px;
 }
-
 
 .hero-inner{
   max-width:900px;
 }
-
 
 /* Typography */
 h1,h2,h3{
@@ -104,6 +99,7 @@ h3{
   color:var(--muted);
   margin-bottom:18px;
 }
+
 .hero h1{
   max-width:900px;
 }
@@ -211,78 +207,78 @@ figcaption{
   color:var(--muted);
 }
 
-/* Responsive */
-@media(max-width:900px){
-  h1{font-size:34px}
-  .grid{grid-template-columns:1fr}
-  .gallery-minimal{grid-template-columns:1fr}
-  .image-placeholder{height:260px}
-}
-@media (max-width: 900px){
+/* ===== Responsive (mobile) ===== */
+@media (max-width:900px){
 
   .container{
-    padding: 0 16px;
+    padding:0 16px;
   }
 
-  .header{
-    position: sticky;
-    top: 0;
-    background: var(--alt);
-  }
-
+  /* Centered, stacked header on mobile */
   .nav{
-  height: auto;
-  padding: 14px 0;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-}
+    height:auto;
+    padding:14px 0;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-align:center;
+  }
 
+  .menu{
+    text-align:center;
+    width:100%;
   }
 
   .menu a{
-    margin-left: 0;
-    margin-right: 16px;
-    display: inline-block;
-    font-size: 13px;
+    margin:0 10px;
+    font-size:13px;
+    display:inline-block;
   }
 
+  /* Hero */
   .hero{
-    padding: 56px 0 40px;
+    padding:56px 0 40px;
   }
 
   h1{
-    font-size: 34px;      
-    line-height: 1.08;    
+    font-size:34px;
+    line-height:1.08;
   }
 
   .lead{
-    font-size: 16px;
-    line-height: 1.6;
+    font-size:16px;
+    line-height:1.6;
   }
 
+  /* Sections/cards */
   .section{
-    padding: 64px 0;
+    padding:64px 0;
   }
 
   .about{
-    padding: 64px 0;
+    padding:64px 0;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
   }
 
   .card{
-    padding: 18px;
+    padding:18px;
   }
 
+  /* Gallery */
   .gallery-minimal{
-    gap: 28px;
+    grid-template-columns:1fr;
+    gap:28px;
   }
 
   .gallery-minimal img{
-    height: 280px;
+    height:280px;
   }
 
   .image-placeholder{
-    height: 280px;
+    height:280px;
   }
 }
