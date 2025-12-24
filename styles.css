@@ -14,13 +14,23 @@ body{
   font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   color:var(--ink);
   background:var(--bg);
-  line-height:1.5;
+  line-height:1.55;
 }
 
-a{color:inherit;text-decoration:none}
+/* Links */
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+/* Layout */
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
 
+/* Header / Nav */
 .header{
   position:sticky;
   top:0;
@@ -28,20 +38,68 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--line);
 }
 
-.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-.logo{font-weight:500;letter-spacing:.03em}
-.logo img{height:36px;opacity:.95}
+.logo{
+  font-weight:500;
+  letter-spacing:.04em;
+}
 
-.menu a{margin-left:18px;font-size:14px;color:var(--muted)}
+.logo img{
+  height:36px;
+  opacity:.95;
+}
 
-.hero{padding:72px 0 56px}
-.hero-inner{max-width:700px}
+.menu a{
+  margin-left:18px;
+  font-size:14px;
+  color:var(--muted);
+}
 
-h1{font-size:42px;line-height:1.1;margin:0 0 16px}
+/* Hero */
+.hero{
+  padding:72px 0 56px;
+}
 
-.lead{font-size:18px;color:var(--muted);margin-bottom:18px}
+.hero-inner{
+  max-width:720px;
+}
 
+/* Typography */
+h1,h2,h3{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-weight:500;
+  letter-spacing:.02em;
+}
+
+h1{
+  font-size:44px;
+  line-height:1.05;
+  margin:0 0 16px;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.lead{
+  font-size:18px;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+/* Buttons */
 .btn{
   display:inline-block;
   padding:12px 18px;
@@ -52,37 +110,98 @@ h1{font-size:42px;line-height:1.1;margin:0 0 16px}
   font-size:14px;
 }
 
-.meta{font-size:14px;color:var(--muted)}
+/* Meta */
+.meta{
+  font-size:14px;
+  color:var(--muted);
+}
 
-.section{padding:72px 0;border-top:1px solid var(--line)}
-.section.alt{background:var(--alt)}
+/* Sections */
+.section{
+  padding:72px 0;
+  border-top:1px solid var(--line);
+}
 
-h2{font-size:26px;margin-bottom:12px}
-.subhead{color:var(--muted);margin-bottom:32px}
+.section.alt{
+  background:var(--alt);
+}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.subhead{
+  color:var(--muted);
+  margin-bottom:32px;
+}
 
-.card{border:1px solid var(--line);padding:20px;background:var(--alt)}
-.card h3{margin-top:0;font-size:16px}
-.card p{color:var(--muted);font-size:14px}
+/* Grid / Cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 
-.gallery-minimal{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
-.gallery-minimal img{width:100%;height:340px;object-fit:cover;display:block}
+.card{
+  border:1px solid var(--line);
+  padding:20px;
+  background:var(--alt);
+}
 
-.image-placeholder{height:340px;background:#EEE9E2}
+.card h3{
+  margin-top:0;
+}
 
-figcaption{margin-top:10px;font-size:13px;color:var(--muted);letter-spacing:.02em}
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
 
-.footer{padding:32px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+/* Gallery */
+.gallery-minimal{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
 
-.about { padding: 4rem 0; }
-.about h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
-.about p { max-width: 720px; line-height: 1.7; margin-bottom: 1.25rem; }
+.gallery-minimal img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  display:block;
+}
 
+.image-placeholder{
+  height:340px;
+  background:#EEE9E2;
+}
+
+figcaption{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+
+/* About */
+.about{
+  padding:72px 0;
+}
+
+.about p{
+  max-width:720px;
+  line-height:1.7;
+  margin-bottom:1.25rem;
+}
+
+/* Footer */
+.footer{
+  padding:32px 0;
+  border-top:1px solid var(--line);
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Responsive */
 @media(max-width:900px){
   h1{font-size:34px}
   .grid{grid-template-columns:1fr}
   .gallery-minimal{grid-template-columns:1fr}
   .image-placeholder{height:260px}
 }
-
