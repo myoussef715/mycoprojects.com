@@ -281,4 +281,24 @@ figcaption{
   .image-placeholder{
     height:280px;
   }
+
+  @media (max-width:900px){
+
+  /* Force the menu links to center as a group */
+  .menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    width:100%;
+    text-align:center; /* harmless backup */
+  }
+
+
+  .menu a{
+    margin:0 !important;
+    display:inline-block;
+  }
 }
+
