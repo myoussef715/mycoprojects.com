@@ -67,8 +67,9 @@ a{
 }
 
 .hero-inner{
-  max-width:720px;
+  max-width:900px;
 }
+
 
 /* Typography */
 h1,h2,h3{
@@ -97,6 +98,13 @@ h3{
   font-size:18px;
   color:var(--muted);
   margin-bottom:18px;
+}
+.hero h1{
+  max-width:900px;
+}
+
+.hero .lead{
+  max-width:760px;
 }
 
 /* Buttons */
