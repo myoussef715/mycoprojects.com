@@ -55,10 +55,14 @@ a{
   opacity:.95;
 }
 
+.menu{
+  text-align: center;
+}
+
 .menu a{
-  margin-left:18px;
-  font-size:14px;
-  color:var(--muted);
+  margin: 0 12px;
+  display: inline-block;
+}
 }
 
 /* Hero */
@@ -227,11 +231,14 @@ figcaption{
   }
 
   .nav{
-    height: auto;
-    padding: 14px 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  height: auto;
+  padding: 14px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
   }
 
   .menu a{
