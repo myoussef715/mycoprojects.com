@@ -225,14 +225,22 @@ figcaption{
     text-align:center;
   }
 
+  /* Force the menu links to center as a group */
   .menu{
-    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
     width:100%;
+    text-align:center; /* fallback */
   }
 
+  /* Remove desktop left-margin + keep spacing consistent */
   .menu a{
-    margin:0 10px;
+    margin:0 !important;
     font-size:13px;
+    color:var(--muted);
     display:inline-block;
   }
 
@@ -281,24 +289,4 @@ figcaption{
   .image-placeholder{
     height:280px;
   }
-
-  @media (max-width:900px){
-
-  /* Force the menu links to center as a group */
-  .menu{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:12px;
-    width:100%;
-    text-align:center; /* harmless backup */
-  }
-
-
-  .menu a{
-    margin:0 !important;
-    display:inline-block;
-  }
 }
-
