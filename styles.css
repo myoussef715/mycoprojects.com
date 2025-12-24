@@ -14,7 +14,7 @@ a{color:inherit;text-decoration:none}
 .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-weight:500;letter-spacing:.03em}
 .logo img {
-  height: 28px;      /* more understated, gallery-like */
+  height: 36px;      /* more understated, gallery-like */
   opacity: 0.95;
 }
 .menu a{margin-left:18px;font-size:14px;color:var(--muted)}
