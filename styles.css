@@ -51,3 +51,17 @@ figcaption{margin-top:10px;font-size:13px;color:var(--muted);letter-spacing:.02e
   .gallery-minimal{grid-template-columns:1fr}
   .image-placeholder{height:260px}
 }
+.about {
+  padding: 4rem 0;
+}
+
+.about h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  max-width: 720px;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
