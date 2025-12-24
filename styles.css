@@ -213,3 +213,75 @@ figcaption{
   .gallery-minimal{grid-template-columns:1fr}
   .image-placeholder{height:260px}
 }
+/* ===== Mobile streamlining patch (paste at the VERY END of styles.css) ===== */
+
+@media (max-width: 900px){
+
+  /* Slightly tighter gutters on phones */
+  .container{
+    padding: 0 16px;
+  }
+
+  /* Header/nav: stack logo + menu so it never crams/wraps awkwardly */
+  .header{
+    position: sticky;
+    top: 0;
+    background: var(--alt);
+  }
+
+  .nav{
+    height: auto;
+    padding: 14px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .menu a{
+    margin-left: 0;
+    margin-right: 16px;
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  /* Hero: reduce vertical height + improve type rhythm */
+  .hero{
+    padding: 56px 0 40px;
+  }
+
+  h1{
+    font-size: 34px;      /* keep your scale */
+    line-height: 1.08;    /* tighter, more editorial */
+  }
+
+  .lead{
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Sections/cards: soften “boxy” feel */
+  .section{
+    padding: 64px 0;
+  }
+
+  .about{
+    padding: 64px 0;
+  }
+
+  .card{
+    padding: 18px;
+  }
+
+  /* Gallery: ensure comfortable spacing */
+  .gallery-minimal{
+    gap: 28px;
+  }
+
+  .gallery-minimal img{
+    height: 280px;
+  }
+
+  .image-placeholder{
+    height: 280px;
+  }
+}
