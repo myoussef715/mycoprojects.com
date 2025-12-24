@@ -130,6 +130,9 @@ h3{
   padding:72px 0;
   border-top:1px solid var(--line);
 }
+.section:first-of-type{
+  padding-top:32px;
+}
 
 .section.alt{
   background:var(--alt);
