@@ -295,7 +295,7 @@ figcaption{
   }
 }
 /* Full-bleed Hero Image */
-.hero-image img {
+.hero-image img { height: 60vh; }
   width: 100%;
   height: 70vh; /* 70% of screen height */
   object-fit: cover; /* crop beautifully */
