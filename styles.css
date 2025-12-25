@@ -295,15 +295,12 @@ figcaption{
   }
 }
 .hero-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 32px;      /* space between image and text */
 }
 
 .hero-image img {
-  width: 100%;
-  height: 75vh;
-  object-fit: cover; /* important: keeps proportions + fills space */
-  object-position: center center; /* ensures the middle of image is visible */
-  max-width: 1400px; /* keeps it elegant on huge screens */
+  display: block;
+  max-width: 100%;          /* don't overflow the container horizontally */
+  height: auto;             /* keep the aspect ratio, no cropping */
+  margin: 0 auto;           /* center the image */
 }
