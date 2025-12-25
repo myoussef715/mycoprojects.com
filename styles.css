@@ -244,9 +244,12 @@ figcaption{
 }
 
 .about p{
-  max-width:720px;
+  max-width: var(--max);
+  width: 100%;
   line-height:1.7;
   margin-bottom:1.25rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===== Footer ===== */
