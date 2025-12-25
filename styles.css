@@ -296,19 +296,18 @@ figcaption{
 }
 .hero-image {
   width: 100%;
-  max-height: calc(100vh - 80px); /* keeps image within visible screen, minus header */
+  height: min(100vh, 700px); /* fits the screen without huge scroll */
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
+  justify-content: center;
+  margin-bottom: 40px;       /* pushes the text down so it doesn't overlap */
+  overflow: hidden;          /* hides anything that might poke out */
 }
 
 .hero-image img {
   max-width: 100%;
   max-height: 100%;
-  height: auto;
   width: auto;
+  height: auto;
   display: block;
-  object-fit: contain; /* show entire image, no cropping */
 }
