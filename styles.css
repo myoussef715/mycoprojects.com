@@ -7,8 +7,11 @@
   --max:1100px;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
+/* Base */
 body{
   margin:0;
   font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -17,23 +20,23 @@ body{
   line-height:1.55;
 }
 
-/* Links */
 a{
   color:inherit;
   text-decoration:none;
 }
 
-/* Layout */
 .container{
   max-width:var(--max);
   margin:0 auto;
   padding:0 20px;
 }
 
-/* Header / Nav */
+/* ===== Header / Nav ===== */
+
 .header{
   position:sticky;
   top:0;
+  z-index:10;
   background:var(--alt);
   border-bottom:1px solid var(--line);
 }
@@ -50,9 +53,11 @@ a{
   letter-spacing:.04em;
 }
 
+/* logo image you added */
 .logo img{
   height:70px;
   opacity:.95;
+  display:block;
 }
 
 /* Desktop menu */
@@ -62,9 +67,33 @@ a{
   color:var(--muted);
 }
 
-/* Hero */
+/* ===== Hero Image (new block above the heading) ===== */
+
+.hero-image{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto 28px;   /* space below image before text */
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;      /* hides any tiny overflow */
+}
+
+/* This keeps the image centered and fully visible without huge scroll */
+.hero-image img{
+  max-width:100%;
+  max-height:70vh;      /* never taller than 70% of the viewport */
+  width:auto;
+  height:auto;
+  display:block;
+  object-fit:contain;   /* no cropping; shows whole image */
+}
+
+/* ===== Hero Text ===== */
+
 .hero{
-  padding:72px 0 40px;
+  padding:40px 0 40px;  /* reduced top padding since we have an image above */
 }
 
 .hero-inner{
@@ -72,6 +101,7 @@ a{
 }
 
 /* Typography */
+
 h1,h2,h3{
   font-family:'Cormorant Garamond', Georgia, serif;
   font-weight:500;
@@ -104,6 +134,7 @@ h3{
 .hero .lead{ max-width:760px; }
 
 /* Buttons */
+
 .btn{
   display:inline-block;
   padding:12px 18px;
@@ -114,21 +145,21 @@ h3{
   font-size:14px;
 }
 
-/* Meta */
 .meta{
   font-size:14px;
   color:var(--muted);
 }
 
-/* Sections */
+/* ===== Sections ===== */
+
 .section{
   padding:72px 0;
   border-top:1px solid var(--line);
 }
 
-/* Tighten hero → first section */
+/* First section after hero a bit tighter */
 .section:first-of-type{
-  padding-top:32px;
+  padding-top:48px;
 }
 
 .section.alt{
@@ -140,7 +171,13 @@ h3{
   margin-bottom:32px;
 }
 
-/* Grid / Cards */
+/* Normalize spacing between sections slightly */
+.section + .section{
+  padding-top:64px;
+}
+
+/* ===== Grid / Cards ===== */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -153,19 +190,24 @@ h3{
   background:var(--alt);
 }
 
-.card h3{ margin-top:0; }
+.card h3{
+  margin-top:0;
+}
+
 .card p{
   color:var(--muted);
   font-size:14px;
 }
 
-/* Gallery */
+/* ===== Gallery ===== */
+
 .gallery-minimal{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:40px;
 }
 
+/* If you use <img> inside gallery items */
 .gallery-minimal img{
   width:100%;
   height:340px;
@@ -173,6 +215,7 @@ h3{
   display:block;
 }
 
+/* Fallback placeholder blocks */
 .image-placeholder{
   height:340px;
   background:#EEE9E2;
@@ -185,7 +228,8 @@ figcaption{
   letter-spacing:.02em;
 }
 
-/* About */
+/* ===== About ===== */
+
 .about{
   padding:72px 0;
 }
@@ -196,7 +240,8 @@ figcaption{
   margin-bottom:1.25rem;
 }
 
-/* Footer */
+/* ===== Footer ===== */
+
 .footer{
   padding:32px 0;
   border-top:1px solid var(--line);
@@ -204,15 +249,18 @@ figcaption{
   color:var(--muted);
 }
 
-/* ===== Responsive (mobile) ===== */
+/* ===== Responsive (mobile & tablet) ===== */
+
 @media (max-width:900px){
 
-  .container{ padding:0 16px; }
+  .container{
+    padding:0 16px;
+  }
 
-  /* Centered, stacked header on mobile */
+  /* Stacked header on mobile */
   .nav{
     height:auto;
-    padding:14px 0;
+    padding:10px 0;
     flex-direction:column;
     align-items:center;
     justify-content:center;
@@ -220,9 +268,10 @@ figcaption{
     text-align:center;
   }
 
-  .logo img{ height:52px; }
+  .logo img{
+    height:52px;
+  }
 
-  /* Center menu as a group */
   .menu{
     display:flex;
     justify-content:center;
@@ -239,8 +288,19 @@ figcaption{
     display:inline-block;
   }
 
-  /* Hero */
-  .hero{ padding:56px 0 40px; }
+  /* Hero image: smaller vertical footprint on phones/tablets */
+  .hero-image{
+    margin:8px auto 20px;
+  }
+
+  .hero-image img{
+    max-height:55vh;  /* smaller so it doesn't feel huge */
+  }
+
+  /* Hero text */
+  .hero{
+    padding:32px 0 32px;
+  }
 
   h1{
     font-size:34px;
@@ -253,72 +313,37 @@ figcaption{
   }
 
   /* Sections/cards */
-  .section{ padding:64px 0; }
+  .section{
+    padding:56px 0;
+  }
 
-  /* Keep first section tight on mobile too */
-  .section:first-of-type{ padding-top:32px; }
+  .section:first-of-type{
+    padding-top:40px;
+  }
 
-  .about{ padding:64px 0; }
+  .section + .section{
+    padding-top:48px;
+  }
 
-  .grid{ grid-template-columns:1fr; }
+  .about{
+    padding:56px 0;
+  }
 
-  .card{ padding:18px; }
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-  /* Gallery */
+  .card{
+    padding:18px;
+  }
+
   .gallery-minimal{
     grid-template-columns:1fr;
     gap:28px;
   }
 
-  .gallery-minimal img{ height:280px; }
-  .image-placeholder{ height:280px; }
-}
-
-/* ===== Recommendation: normalize spacing Services → Gallery (and all section-to-section transitions) ===== */
-/* If your "Services" is a .section and the next block is also a .section, this subtly tightens that gap */
-.section + .section{
-  padding-top:56px;   /* was 72px */
-}
-
-/* Keep the first section tighter as already specified */
-.section:first-of-type{
-  padding-top:32px;
-}
-
-/* Mobile: mirror the same rhythm */
-@media (max-width:900px){
-  .section + .section{
-    padding-top:48px; /* was 64px */
-  }
-  .section:first-of-type{
-    padding-top:32px;
-  }
-}
-/* Clean hero image sizing: centered, contained, no vertical scroll just for image */
-.hero-image {
-  width: 100%;
-  max-height: 70vh;        /* never taller than 70% of the viewport */
-  margin: 0 auto 32px;     /* space below the image before the text */
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;        /* hides tiny overflow if any */
-}
-
-.hero-image img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;     /* show the whole image, no cropping */
-  display: block;
-}
-
-/* Mobile: slightly shorter so it doesn't feel huge */
-@media (max-width: 600px) {
-  .hero-image {
-    max-height: 55vh;      /* smaller vertical footprint on phones */
-    margin-bottom: 24px;
+  .gallery-minimal img,
+  .image-placeholder{
+    height:280px;
   }
 }
