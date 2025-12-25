@@ -294,32 +294,31 @@ figcaption{
     padding-top:32px;
   }
 }
-/* Hero image: desktop + mobile */
+/* Clean hero image sizing: centered, contained, no vertical scroll just for image */
 .hero-image {
   width: 100%;
-  max-width: 1100px;          /* matches your container width */
-  margin: 0 auto 24px;        /* centers and adds space below image */
-  overflow: hidden;           /* hides any overflow */
-  border-radius: 0;           /* keep it clean/flat */
+  max-height: 70vh;        /* never taller than 70% of the viewport */
+  margin: 0 auto 32px;     /* space below the image before the text */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;        /* hides tiny overflow if any */
 }
 
 .hero-image img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;     /* show the whole image, no cropping */
   display: block;
-  object-fit: cover;
-  object-position: center;
 }
 
-/* Mobile: slightly shorter, no excessive vertical space */
+/* Mobile: slightly shorter so it doesn't feel huge */
 @media (max-width: 600px) {
   .hero-image {
-    margin: 0 auto 20px;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;
-    max-height: 65vh;   /* cap height to ~65% of viewport */
+    max-height: 55vh;      /* smaller vertical footprint on phones */
+    margin-bottom: 24px;
   }
 }
