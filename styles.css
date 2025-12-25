@@ -311,3 +311,18 @@ figcaption{
   height: auto;
   display: block;
 }
+/* Fix hero image spacing on mobile */
+@media (max-width: 600px) {
+  .hero-image {
+    height: 100vh;   /* Fill the screen height */
+    padding: 0;      /* Remove extra white space */
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Ensures no distortion */
+    object-position: center; /* Center crop */
+    display: block;
+  }
+}
