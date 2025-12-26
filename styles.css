@@ -7,11 +7,7 @@
   --max:1100px;
 }
 
-*{
-  box-sizing:border-box;
-}
-
-/* ===== Base ===== */
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -21,85 +17,61 @@ body{
   line-height:1.55;
 }
 
+/* Links */
 a{
   color:inherit;
   text-decoration:none;
 }
 
+/* Layout */
 .container{
   max-width:var(--max);
   margin:0 auto;
   padding:0 20px;
 }
 
-/* ===== Header / Nav ===== */
-
+/* Header / Nav */
 .header{
   position:sticky;
   top:0;
-  z-index:10;
   background:var(--alt);
   border-bottom:1px solid var(--line);
 }
 
 .nav{
-  height:72px;
+  height:64px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+}
+
+.logo{
+  font-weight:500;
+  letter-spacing:.04em;
 }
 
 .logo img{
-  height:52px;      /* keeps logo fully inside the bar */
+  height:70px;
   opacity:.95;
-  display:block;
 }
 
-.menu{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
+/* Desktop menu */
 .menu a{
+  margin-left:18px;
   font-size:14px;
   color:var(--muted);
 }
 
-/* ===== Hero Image (top) ===== */
-
-.hero-image{
-  width:100%;
-  max-width:var(--max);
-  margin:0 auto 24px;        /* small gap below image */
-  padding:24px 20px 0;       /* modest top padding, no bottom padding */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.hero-image img{
-  width:100%;
-  height:auto;
-  max-height:70vh;           /* never taller than 70% of the viewport */
-  object-fit:contain;        /* show entire image, no cropping */
-  display:block;
-}
-
-/* ===== Hero Text ===== */
-
+/* Hero */
 .hero{
-  padding:40px 0 56px;
+  padding:52px 0 40px;  /* tightened: was 72px 0 40px */
 }
 
 .hero-inner{
   max-width:900px;
-  margin:0 auto;
-  text-align:center;         /* centers the whole text block */
 }
 
+/* Typography */
 h1,h2,h3{
   font-family:'Cormorant Garamond', Georgia, serif;
   font-weight:500;
@@ -110,10 +82,6 @@ h1{
   font-size:44px;
   line-height:1.05;
   margin:0 0 16px;
-}
-
-.focus-line{
-  display:block;             /* puts “with a focus on execution.” on its own line */
 }
 
 h2{
@@ -134,16 +102,13 @@ h3{
 
 .hero h1{
   max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
 }
 
 .hero .lead{
   max-width:760px;
-  margin-left:auto;
-  margin-right:auto;
 }
 
+/* Buttons */
 .btn{
   display:inline-block;
   padding:12px 18px;
@@ -154,22 +119,21 @@ h3{
   font-size:14px;
 }
 
+/* Meta */
 .meta{
   font-size:14px;
   color:var(--muted);
-  margin-top:12px;
 }
 
-/* ===== Sections ===== */
-
+/* Sections */
 .section{
   padding:72px 0;
   border-top:1px solid var(--line);
 }
 
-/* first section after hero slightly tighter */
+/* Tighten hero → first section */
 .section:first-of-type{
-  padding-top:48px;
+  padding-top:32px;
 }
 
 .section.alt{
@@ -181,13 +145,7 @@ h3{
   margin-bottom:32px;
 }
 
-/* normalize spacing between subsequent sections */
-.section + .section{
-  padding-top:64px;
-}
-
-/* ===== Grid / Cards ===== */
-
+/* Grid / Cards */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -209,8 +167,7 @@ h3{
   font-size:14px;
 }
 
-/* ===== Gallery ===== */
-
+/* Gallery */
 .gallery-minimal{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -236,29 +193,18 @@ figcaption{
   letter-spacing:.02em;
 }
 
-/* ===== About ===== */
-
+/* About */
 .about{
   padding:72px 0;
 }
 
-.about .container{
-  max-width:var(--max);
-}
-
 .about p{
-  max-width:var(--max);   /* stretches across the same plane as Projects */
-  width:100%;
+  max-width:720px;
   line-height:1.7;
-  margin:0 0 1.25rem;
+  margin-bottom:1.25rem;
 }
 
-/* ===== Contact / Footer ===== */
-
-.contact{
-  max-width:var(--max);
-}
-
+/* Footer */
 .footer{
   padding:32px 0;
   border-top:1px solid var(--line);
@@ -266,18 +212,17 @@ figcaption{
   color:var(--muted);
 }
 
-/* ===== Responsive (mobile & tablet) ===== */
-
+/* ===== Responsive (mobile) ===== */
 @media (max-width:900px){
 
   .container{
     padding:0 16px;
   }
 
-  /* stacked header */
+  /* Centered, stacked header on mobile */
   .nav{
     height:auto;
-    padding:10px 0 12px;
+    padding:14px 0;
     flex-direction:column;
     align-items:center;
     justify-content:center;
@@ -286,32 +231,29 @@ figcaption{
   }
 
   .logo img{
-    height:48px;
+    height:52px;
   }
 
+  /* Center menu as a group */
   .menu{
+    display:flex;
     justify-content:center;
+    align-items:center;
     flex-wrap:wrap;
     gap:12px;
+    width:100%;
   }
 
   .menu a{
+    margin:0 !important;
     font-size:13px;
+    color:var(--muted);
+    display:inline-block;
   }
 
-  /* hero image: smaller vertical footprint */
-  .hero-image{
-    padding:16px 16px 0;
-    margin:0 auto 16px;
-  }
-
-  .hero-image img{
-    max-height:55vh;
-  }
-
-  /* hero text */
+  /* Hero on mobile */
   .hero{
-    padding:32px 0 40px;
+    padding:56px 0 40px;
   }
 
   h1{
@@ -324,21 +266,18 @@ figcaption{
     line-height:1.6;
   }
 
-  /* sections/cards */
+  /* Sections/cards */
   .section{
-    padding:56px 0;
+    padding:64px 0;
   }
 
+  /* Keep first section tight on mobile too */
   .section:first-of-type{
-    padding-top:40px;
-  }
-
-  .section + .section{
-    padding-top:48px;
+    padding-top:32px;
   }
 
   .about{
-    padding:56px 0;
+    padding:64px 0;
   }
 
   .grid{
@@ -349,13 +288,22 @@ figcaption{
     padding:18px;
   }
 
+  /* Gallery */
   .gallery-minimal{
     grid-template-columns:1fr;
     gap:28px;
   }
 
-  .gallery-minimal img,
+  .gallery-minimal img{
+    height:280px;
+  }
+
   .image-placeholder{
     height:280px;
+  }
+
+  /* Normalize Services → next section rhythm */
+  .section + .section{
+    padding-top:48px;
   }
 }
