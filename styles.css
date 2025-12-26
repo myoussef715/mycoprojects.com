@@ -43,50 +43,61 @@ a{
 }
 
 .nav{
-  min-height:64px;
+  height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:24px;
 }
 
 .logo img{
-  height:48px;       /* keeps logo comfortably inside the bar */
-  display:block;
+  height:52px;      /* keeps logo fully inside the bar */
   opacity:.95;
+  display:block;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
 .menu a{
-  margin-left:18px;
   font-size:14px;
   color:var(--muted);
 }
 
-/* ===== Hero Image (top hero photo) ===== */
+/* ===== Hero Image (top) ===== */
 
 .hero-image{
-  padding:0 20px;              /* align with .container content */
-  margin:0 auto;
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto 24px;        /* small gap below image */
+  padding:24px 20px 0;       /* modest top padding, no bottom padding */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
 .hero-image img{
-  display:block;
   width:100%;
-  max-width:var(--max);        /* same visual width as text below */
-  margin:16px auto 24px;       /* subtle space above/below */
-  max-height:70vh;             /* never taller than 70% of viewport */
   height:auto;
-  object-fit:contain;          /* show whole image, no cropping */
+  max-height:70vh;           /* never taller than 70% of the viewport */
+  object-fit:contain;        /* show entire image, no cropping */
+  display:block;
 }
 
 /* ===== Hero Text ===== */
 
 .hero{
-  padding:0 0 48px;            /* no big padding above (image drives the top) */
+  padding:40px 0 56px;
 }
 
 .hero-inner{
-  max-width:var(--max);
+  max-width:900px;
   margin:0 auto;
+  text-align:center;         /* centers the whole text block */
 }
 
 h1,h2,h3{
@@ -102,7 +113,7 @@ h1{
 }
 
 .focus-line{
-  display:block;               /* ensures “focus on execution” is on its own line */
+  display:block;             /* puts “with a focus on execution.” on its own line */
 }
 
 h2{
@@ -119,7 +130,18 @@ h3{
   font-size:18px;
   color:var(--muted);
   margin-bottom:18px;
+}
+
+.hero h1{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.hero .lead{
   max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .btn{
@@ -135,7 +157,7 @@ h3{
 .meta{
   font-size:14px;
   color:var(--muted);
-  margin-top:10px;
+  margin-top:12px;
 }
 
 /* ===== Sections ===== */
@@ -143,6 +165,11 @@ h3{
 .section{
   padding:72px 0;
   border-top:1px solid var(--line);
+}
+
+/* first section after hero slightly tighter */
+.section:first-of-type{
+  padding-top:48px;
 }
 
 .section.alt{
@@ -154,17 +181,12 @@ h3{
   margin-bottom:32px;
 }
 
-/* Normalize spacing between consecutive sections */
+/* normalize spacing between subsequent sections */
 .section + .section{
   padding-top:64px;
 }
 
-/* First section after hero a bit tighter */
-.section:first-of-type{
-  padding-top:48px;
-}
-
-/* ===== Grid / Cards (Services) ===== */
+/* ===== Grid / Cards ===== */
 
 .grid{
   display:grid;
@@ -187,7 +209,7 @@ h3{
   font-size:14px;
 }
 
-/* ===== Gallery (Projects) ===== */
+/* ===== Gallery ===== */
 
 .gallery-minimal{
   display:grid;
@@ -218,7 +240,6 @@ figcaption{
 
 .about{
   padding:72px 0;
-  border-top:1px solid var(--line);
 }
 
 .about .container{
@@ -226,19 +247,17 @@ figcaption{
 }
 
 .about p{
-  max-width:var(--max);        /* stretch across plane similar to Projects copy */
+  max-width:var(--max);   /* stretches across the same plane as Projects */
   width:100%;
   line-height:1.7;
-  margin-bottom:1.25rem;
+  margin:0 0 1.25rem;
 }
 
-/* ===== Contact ===== */
+/* ===== Contact / Footer ===== */
 
 .contact{
   max-width:var(--max);
 }
-
-/* ===== Footer ===== */
 
 .footer{
   padding:32px 0;
@@ -255,45 +274,44 @@ figcaption{
     padding:0 16px;
   }
 
-  /* Stacked header on mobile */
+  /* stacked header */
   .nav{
+    height:auto;
+    padding:10px 0 12px;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     gap:10px;
-    padding:10px 0;
+    text-align:center;
   }
 
   .logo img{
-    height:44px;
+    height:48px;
   }
 
   .menu{
-    display:flex;
     justify-content:center;
-    align-items:center;
     flex-wrap:wrap;
     gap:12px;
-    width:100%;
   }
 
   .menu a{
-    margin:0 !important;
     font-size:13px;
   }
 
-  /* Hero image: tighter vertical footprint */
+  /* hero image: smaller vertical footprint */
   .hero-image{
-    padding:0 16px;
+    padding:16px 16px 0;
+    margin:0 auto 16px;
   }
 
   .hero-image img{
-    margin:8px auto 20px;
     max-height:55vh;
   }
 
+  /* hero text */
   .hero{
-    padding:0 0 40px;
+    padding:32px 0 40px;
   }
 
   h1{
@@ -306,6 +324,7 @@ figcaption{
     line-height:1.6;
   }
 
+  /* sections/cards */
   .section{
     padding:56px 0;
   }
