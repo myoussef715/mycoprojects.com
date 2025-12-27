@@ -5,7 +5,6 @@
   --line:#E7E2DA;   /* warm line */
   --alt:#FFFFFF;    /* crisp alt section */
   --max:1100px;
-  --nav-offset:90px;  /* how far below the sticky nav anchors should land (desktop) */
 }
 
 * {
@@ -33,7 +32,7 @@ a {
 }
 
 /* ===== Header / Nav ===== */
-.header{
+.header {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -107,7 +106,9 @@ a {
 }
 
 /* Typography */
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-family:'Cormorant Garamond', Georgia, serif;
   font-weight:500;
   letter-spacing:.02em;
@@ -246,23 +247,8 @@ figcaption {
   color:var(--muted);
 }
 
-/* Make in-page nav links land with headings near the top,
-   not in the middle of the section */
-#services,
-#portfolio,
-#about,
-#contact {
-  scroll-margin-top: var(--nav-offset);
-}
-
-
 /* ===== Responsive (mobile & tablet) ===== */
 @media (max-width:900px) {
-
-  /* taller stacked nav on mobile → increase anchor offset */
-  :root {
-    --nav-offset:140px;
-  }
 
   .container {
     padding:0 16px;
@@ -352,5 +338,14 @@ figcaption {
   .gallery-minimal img,
   .image-placeholder {
     height:280px;
+  }
+
+  /* Anchor scroll fix ONLY on mobile:
+     make section headings land nicely below the sticky nav */
+  #services,
+  #portfolio,
+  #about,
+  #contact {
+    scroll-margin-top: 140px;
   }
 }
