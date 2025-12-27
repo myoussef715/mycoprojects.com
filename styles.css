@@ -32,12 +32,16 @@ a {
 }
 
 /* ===== Header / Nav ===== */
-.header {
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:var(--alt);
-  border-bottom:1px solid var(--line);
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--alt);
+  border-bottom: 1px solid var(--line);
+
+  /* Keep the logo clear of the iOS/Chrome top bar when sticky */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-top: constant(safe-area-inset-top); /* older iOS fallback, safely ignored elsewhere */
 }
 
 .nav {
