@@ -260,7 +260,7 @@ figcaption {
 
   /* 🔧 MOBILE OVERRIDE: smaller offset so less white space when nav links scroll */
   :root {
-    --nav-offset:60px;
+    --nav-offset:40px;
   }
 
   .container {
