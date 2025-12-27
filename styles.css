@@ -5,7 +5,7 @@
   --line:#E7E2DA;   /* warm line */
   --alt:#FFFFFF;    /* crisp alt section */
   --max:1100px;
-   --nav-offset:90px;  /* how far below the sticky nav anchors should land */
+  --nav-offset:90px;  /* how far below the sticky nav anchors should land (desktop) */
 }
 
 * {
@@ -42,7 +42,7 @@ a {
 
   /* Keep the logo clear of the iOS/Chrome top bar when sticky */
   padding-top: env(safe-area-inset-top, 0px);
-  padding-top: constant(safe-area-inset-top); /* older iOS fallback, safely ignored elsewhere */
+  padding-top: constant(safe-area-inset-top); /* older iOS fallback */
 }
 
 .nav {
@@ -258,6 +258,11 @@ figcaption {
 
 /* ===== Responsive (mobile & tablet) ===== */
 @media (max-width:900px) {
+
+  /* taller stacked nav on mobile → increase anchor offset */
+  :root {
+    --nav-offset:140px;
+  }
 
   .container {
     padding:0 16px;
